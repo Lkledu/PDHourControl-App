@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class SquadTab extends StatefulWidget {
   const SquadTab({super.key});
