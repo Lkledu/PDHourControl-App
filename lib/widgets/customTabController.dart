@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pd_hour_control_app/widgets/squadTab.dart';
+import 'package:pd_hour_control_app/widgets/userTab.dart';
 
 class CustomTabController extends StatefulWidget {
   const CustomTabController({super.key});
@@ -25,8 +27,8 @@ class _CustomTabControllerState extends State<CustomTabController> {
             height: 400,
             child: TabBarView(
               children: [
-                Container(color: Colors.blueAccent),
-                Container(color: Colors.orangeAccent),
+                SquadTab(),
+                UserTab()
               ],
             ),
           ),
