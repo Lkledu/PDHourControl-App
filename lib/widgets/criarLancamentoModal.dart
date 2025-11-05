@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CriarLancamentoModal extends StatelessWidget {
@@ -14,6 +13,7 @@ class CriarLancamentoModal extends StatelessWidget {
         TextField(),
         Text('Descrição'),
         TextField(),
+        SizedBox(height: 10,),
         ElevatedButton(
           onPressed: () {},
           style: ButtonStyle(
