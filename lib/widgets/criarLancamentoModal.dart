@@ -9,8 +9,11 @@ class CriarLancamentoModal extends StatelessWidget {
     return Column(
       children: [
         Text('ID do Usuário'),
+        TextField(),
         Text('Horas gastas'),
+        TextField(),
         Text('Descrição'),
+        TextField(),
         ElevatedButton(
           onPressed: () {},
           style: ButtonStyle(
