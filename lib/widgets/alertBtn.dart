@@ -17,6 +17,12 @@ class AlertBtn extends StatelessWidget {
                 scrollable: true,
                 title: Text(text),
                 content: content,
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: const Text('Close ')
+                  )
+                ],
               );
             }
         );
