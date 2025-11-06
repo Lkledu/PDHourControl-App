@@ -12,4 +12,19 @@ class ReportEntity {
     required this.spentHours,
     required this.createdAt
   });
+
+  ReportEntity.fromJson(Map<String, dynamic> json)
+      : id = json['id'] ?? '',
+        description = json['description'] ?? [],
+        employeeId =  json['employeeId'] ?? [],
+        spentHours =  json['spentHours'] ?? [],
+        createdAt =  json['createdAt'] ?? [];
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'description': description,
+    'employeeId' : employeeId,
+    'spentHours' : spentHours,
+    'createdAt' : createdAt,
+  };
 }
