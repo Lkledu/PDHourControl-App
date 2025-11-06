@@ -7,7 +7,7 @@ import 'package:pd_hour_control_app/repositories/employeeEntity.dart';
 import 'package:pd_hour_control_app/repositories/squadEntity.dart';
 
 class PdHourControlRepository {
-  Future<int> postEmployees (EmployeeEntity employee) async {
+  Future<int> postEmployee (EmployeeEntity employee) async {
     EmployeeEntity employeeEntity = employee;
     final url = Uri.parse(EnvironmentConfig.urlBase+EnvironmentConfig.urlPostEmployees);
 
@@ -27,7 +27,7 @@ class PdHourControlRepository {
     return -1;
   }
 
-  Future<int> postSquads(SquadEntity squad) async {
+  Future<int> postSquad(SquadEntity squad) async {
     SquadEntity squadEntity = squad;
     final url = Uri.parse(EnvironmentConfig.urlBase+EnvironmentConfig.urlPostEmployees);
 
@@ -47,7 +47,7 @@ class PdHourControlRepository {
     return -1;
   }
 
-  Future<int> postReports(ReportEntity report) async{
+  Future<int> postReport(ReportEntity report) async{
     ReportEntity reportEntity = report;
     final url = Uri.parse(EnvironmentConfig.urlBase+EnvironmentConfig.urlPostEmployees);
 
@@ -65,5 +65,43 @@ class PdHourControlRepository {
     }
 
     return -1;
+  }
+
+  Future<List<EmployeeEntity>> getEmployees() async {
+    final url = Uri.parse(EnvironmentConfig.urlBase + EnvironmentConfig.urlGetEmployees);
+
+    final response = await http.get(
+      url,
+      headers: {
+        'Content-Type':'application/json',
+        'Accept': 'application/json',
+      },
+    );
+
+    List<EmployeeEntity> employees = [];
+    if(response.statusCode == 200) {
+      List employeesRetrived = jsonDecode(response.body);
+      employees = employeesRetrived.map((e) => EmployeeEntity.fromJson(e)).toList();
+    }
+    return employees;
+  }
+
+  Future<List<SquadEntity>> getSquads() async {
+    final url = Uri.parse(EnvironmentConfig.urlBase + EnvironmentConfig.urlGetSquads);
+
+    final response = await http.get(
+      url,
+      headers: {
+        'Content-Type':'application/json',
+        'Accept': 'application/json',
+      },
+    );
+
+    List<SquadEntity> squads = [];
+    if(response.statusCode == 200) {
+      List squadsRetrived = jsonDecode(response.body);
+      squads = squadsRetrived.map((e) => SquadEntity.fromJson(e)).toList();
+    }
+    return squads;
   }
 }
