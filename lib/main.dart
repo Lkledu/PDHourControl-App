@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:pd_hour_control_app/widgets/customTabController.dart';
 import 'package:pd_hour_control_app/widgets/header.dart';
 
+import 'config/environmentConfig.dart';
+
 void main() async {
+
+  await dotenv.load(fileName: EnvironmentConfig.fileName);
+
   runApp(
     const MainPage(),
   );
