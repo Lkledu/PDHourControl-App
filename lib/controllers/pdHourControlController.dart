@@ -5,14 +5,16 @@ import 'package:pd_hour_control_app/services/pdHourControlService.dart';
 class PdHourControlController {
   PdHourControlService _service = PdHourControlService();
   List<SquadEntity> getSquads() {
-    List<SquadEntity> list = [];
+    /*List<SquadEntity> list = [];
     _service.getSquads().then((e){list = e;});
-    return list;
+    return list;*/
+    return [];
   }
 
   List<EmployeeEntity> getEmployees() {
-    List<EmployeeEntity> list = [];
+    /*List<EmployeeEntity> list = [];
     _service.getEmployees().then((e){list = e;});
-    return list;
+    return list;*/
+    return [];
   }
 }

@@ -1,5 +1,4 @@
 import 'package:pd_hour_control_app/repositories/employeeEntity.dart';
-import 'package:pd_hour_control_app/repositories/hanzi_repository/pdHourControlRepository.dart';
 import 'package:pd_hour_control_app/repositories/pdHourControlRepository.dart';
 import 'package:pd_hour_control_app/repositories/squadEntity.dart';
 
